@@ -1,0 +1,53 @@
+{
+  "name": "Hellow World",
+  "short_name": "Hellow World",
+  "version": "0.0.1",
+  "version_name": "Version 0.0.1 Beta",
+  "manifest_version": 3,
+  "description": "Chrome startup template v3",
+  "author": "Abhinand",
+  "minimum_chrome_version": "88",
+  "offline_enabled": true,
+  "options_ui": {
+    "page": "./pages/popup.html",
+    "open_in_tab": false
+  },
+  "action": {
+    "default_icon": {
+      "128": "./images/hellow_world.png"
+    },
+    "default_title": "Hellow World Title",
+    "default_popup": "./pages/popup.html"
+  },
+  "icons": {
+    "128": "./images/hellow_world.png"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "<all_urls>"
+      ],
+      "js": [
+        "./js/content.js"
+      ],
+      "run_at": "document_start"
+    }
+  ],
+  "host_permissions": [
+    "*://*/*",
+    "<all_urls>"
+  ],
+  "permissions": [
+    "storage"
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "images/*"
+      ],
+      "matches": [
+        "<all_urls>"
+      ]
+    }
+  ]
+}
